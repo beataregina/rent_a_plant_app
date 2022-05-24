@@ -1,15 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <%= simple_form_for plant do |r| %>
-        <%= r.input :name %>
-        <%= r.input :plant_type %>
-        <%= r.input :city %>
-        <%= r.input :age %>
-        <%= r.input :price %>
-        <%= r.input :photo, as: :file %>
-        <%= r.button :submit, class: 'btn btn-primary mt-3'%>
-      <% end %>
+<div class="backgroundimg" style="background-image: linear-gradient(
+                                                          180deg,
+                                                            rgba(0, 0, 0, 0.8),
+                                                            rgba(0, 0, 0, 0.2)),
+                                                            url('https://images.unsplash.com/photo-1604762524889-3e2fcc145683\?crop\=entropy\&cs\=tinysrgb\&fm\=jpg\&ixlib\=rb-1.2.1\&q\=80\&raw_url\=true\&ixid\=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\&auto\=format\&fit\=crop\&w\=871')
+                                                        ;
+                                                        ">
+  <div class="container text-center pt-5">
+    <h1 class="pt-3 font-weight-bold">Add a new plant for rent!</h1>
+    <p>Please give us details about your plant baby!</p>
+  </div>
+
+  <div class="container d-flex mt-5">
+    <div class="m-auto">
+      <div class="inputs-stuff col-6 m-auto">
+        <%= simple_form_for plant do |r| %>
+          <%= r.input :name %>
+          <%= r.input :plant_type %>
+          <%= r.input :city %>
+          <%= r.input :age %>
+          <%= r.input :price %>
+          <%= r.input :photo, as: :file %>
+          <%= r.button :submit, class: 'btn btn-primary mt-3'%>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
