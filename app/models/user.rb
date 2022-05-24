@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
 
-  validates :email, :avatar_url, presence: true
+  validates :email, presence: true
 end
