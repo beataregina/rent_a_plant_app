@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: :destroy
-  before_action :find_plant, only: :create
+  before_action :find_plant, only: %i[new create]
 
   def new
     @booking = Booking.new
@@ -10,13 +10,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.plant = @plant
-    @owner_id = @booking.plant.user
-    @booking.save
+    @booking.save!
     redirect_to plant_path(@plant)
   end
 
   def destroy
-    
+
   end
 
   private
