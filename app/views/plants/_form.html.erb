@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= simple_form_for plant do |r| %>
+        <%= r.input :name %>
+        <%= r.input :plant_type %>
+        <%= r.input :city %>
+        <%= r.input :age %>
+        <%= r.input :price %>
+        <%= r.input :photo_url %>
+        <%= r.button :submit, class: 'btn btn-primary mt-3'%>
+      <% end %>
+    </div>
+  </div>
+</div>
