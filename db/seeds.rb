@@ -15,7 +15,6 @@ puts "Creating 6 users..."
   user = User.create!(
     email: Faker::Internet.email,
     password: '123456',
-    avatar_url: Faker::LoremFlickr.image(size: "200x200", search_terms: ['people'], match_all: true)
   )
   puts "#{i + 1}. #{user.email}"
 end
@@ -29,7 +28,6 @@ puts "Creating 60 plants..."
     price: rand(20..200),
     city: 'Berlin',
     user_id: rand(1..6),
-    photo_url: Faker::LoremFlickr.image(size: "200x200", search_terms: ['plants'], match_all: true)
   )
   puts "#{i + 1}. #{plant.name}"
 end
