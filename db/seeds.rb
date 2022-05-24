@@ -12,23 +12,27 @@ User.delete_all
 
 puts "Creating 6 users..."
 6.times do |i|
-  user = User.create!(
+  user = User.new(
     email: Faker::Internet.email,
-    password: '123456',
+    password: '123456'
   )
+  user.save
   puts "#{i + 1}. #{user.email}"
+
+  puts "Creating 60 plants..."
+  10.times do |i|
+    plant = Plant.new(
+      name: Faker::Name.first_name,
+      age: rand(1..10),
+      plant_type: Faker::Name.last_name,
+      price: rand(20..200),
+      city: 'Berlin',
+      description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+    )
+    plant.user = user
+    plant.save!
+    puts "#{i + 1}. #{plant.name}"
+  end
 end
 
-puts "Creating 60 plants..."
-60.times do |i|
-  plant = Plant.create!(
-    name: Faker::Name.first_name,
-    age: rand(1..10),
-    plant_type: Faker::Name.last_name,
-    price: rand(20..200),
-    city: 'Berlin',
-    user_id: rand(1..6),
-  )
-  puts "#{i + 1}. #{plant.name}"
-end
 puts "Finished!"

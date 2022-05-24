@@ -15,7 +15,8 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-
+    @booking.destroy
+    redirect_to plant_path(@booking.plant), status: :see_other
   end
 
   private
