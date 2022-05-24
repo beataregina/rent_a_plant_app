@@ -10,3 +10,8 @@
 .navbar-lewagon .navbar-brand img {
   width: 35px;
 }
+
+.navbar-nav > .active > a {
+  font-size: 10px;
+  color: rgb(255, 0, 162);
+}
