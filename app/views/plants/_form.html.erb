@@ -7,7 +7,7 @@
         <%= r.input :city %>
         <%= r.input :age %>
         <%= r.input :price %>
-        <%= r.input :photo_url %>
+        <%= r.input :photo, as: :file %>
         <%= r.button :submit, class: 'btn btn-primary mt-3'%>
       <% end %>
     </div>
