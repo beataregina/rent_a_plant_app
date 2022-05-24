@@ -4,12 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-<<<<<<< HEAD
-=======
   has_many :plants
   has_many :bookings
   has_many :reviews, through: :bookings
 
->>>>>>> master
   validates :email, :avatar_url, presence: true
 end
