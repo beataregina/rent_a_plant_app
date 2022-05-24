@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
 
-  resources :users
-  resources :plants
+  resources :users, only: %i[new create login] do
+    resources :plants, only: %i[index show new create edit update]
+  end
+
+  resources :plants, only: [:destroy]
 end
