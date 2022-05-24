@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :plant
   belongs_to :user
+<<<<<<< HEAD
   validates :start_date, presence: true
   validates :end_date, presence: true
   # validates :end_date_is_after_start_date
@@ -14,4 +15,8 @@ class Booking < ApplicationRecord
   #     errors.add(:end_date, "cannot be before the start date")
   #   end
   # end
+=======
+
+  validates :start_date, :end_date, presence: true
+>>>>>>> master
 end
