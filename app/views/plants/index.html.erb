@@ -1,10 +1,20 @@
-<h1>Our lovely plant babies!</h1>
-
-
-<ul>
-  <% @plants.each do |plant| %>
-  <li> <%= link_to cl_image_tag(plant.photo.key,
-      width: 400, height: 300, crop: :fill), plant_path(plant) %> </li>
-  <%end%>
-</ul>
+<section class="section">
+    <div class="l-container is--plants-index">
+      <h1 class="plants-index__h1">Plants Catalogue</h1>
+      <div class="plants-index">
+       <% @plants.each do |plant| %>
+          <%= link_to plant_path(plant), class: "plants-index__container w-inline-block" do %>
+            <div class="plants-index__img-wrp">
+              <%= cl_image_tag(plant.photo.key, class: "plants-index__img") %>
+            </div>
+            <h2 class="plants-index__name"><strong class="bold-text"><%= plant.name %></strong></h2>
+            <div class="plants-index__price-div">
+              <h3 class="plants-index__price is--currency">€</h3>
+              <h3 class="plants-index__price"><%= plant.price %></h3>
+            </div>
+          <% end %>
+      <%end%>
+      </div>
+    </div>
+  </section>
 <h3> <%= link_to "+ Crete new plant!", new_plant_path %> </h3>
