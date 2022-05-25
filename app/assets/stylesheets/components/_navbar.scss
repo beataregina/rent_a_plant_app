@@ -4,6 +4,11 @@
   border-bottom: inset;
   max-height: 65px;
   height: 65px;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
