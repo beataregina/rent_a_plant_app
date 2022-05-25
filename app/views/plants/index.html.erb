@@ -1,1 +1,10 @@
 <h1>Our lovely plant babies!</h1>
+
+
+<ul>
+  <% @plants.each do |plant| %>
+  <li> <%= link_to cl_image_tag(plant.photo.key,
+      width: 400, height: 300, crop: :fill), plant_path(plant) %> </li>
+  <%end%>
+</ul>
+<h3> <%= link_to "+ Crete new plant!", new_plant_path %> </h3>

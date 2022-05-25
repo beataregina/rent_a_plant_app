@@ -1,22 +1,38 @@
 // Specific CSS for your home-page
 
+<<<<<<< HEAD
 
+=======
+$pinkcolor: #F2B7C6;
+>>>>>>> master
 
-// .btn-primary {
-//     @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
-// }
+.btn{
+  background-color: $pinkcolor ;
+  color: white;
+  border-color: #F2B7C6
+}
 
-// .form-control {
-//   @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
-// }
+.btn:hover{
+  background-color: #df889e;
+  color: white;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
+}
 
-// .btn-outline-primary {
-//     @include button-outline-variant($mynewcolor, #222222, lighten($mynewcolor,5%), $mynewcolor);
-// }
+.btn:focus {
+  background-color: $pinkcolor;
+  color: white;
+}
 
+<<<<<<< HEAD
 // .btn {
 //   background-color: $mynewcolor ;
 // }
+=======
+.form-control:focus {
+  border-color: #F2B7C6;
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
+}
+>>>>>>> master
 
 .banner-home{
   position: relative;
@@ -36,11 +52,6 @@
   width: 400px;
 }
 
-// button {
-//   background-color: white;
-// }
-
-
 .header-text {
   color: white;
 }
@@ -50,7 +61,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  padding-top: 15px;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
 }
 .single-box{
   position: relative;
@@ -110,4 +122,5 @@
 .single-box:hover {
   background-color: #9ABCA7;
   color: white;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
 }
