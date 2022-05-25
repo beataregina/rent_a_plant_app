@@ -141,14 +141,14 @@ a, a:hover, a:active, a:visited {
   margin-bottom: 2.74em;
   padding: 1em 1.6em;
   border-radius: 5px;
-  background-color: #90a955;
+  background-color: $pink-color;
   transition: all 250ms ease;
   font-size: 1.2em;
   font-weight: 600;
 }
 
 .plant__btn:hover {
-  background-color: #4f772d;
+  background-color: $pink-hover;
   color: #fff;
 }
 
