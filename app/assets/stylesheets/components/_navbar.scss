@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  //background: white;
+  background:#F2B7C6;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,5 +13,10 @@
 
 .navbar-nav > .active > a {
   font-size: 15px;
-  color: #F2B7C6;
+  color: white;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
 }
