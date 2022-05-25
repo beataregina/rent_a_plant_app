@@ -21,18 +21,16 @@
             <div class="col">
               <%= r.input :plant_type %>
             </div>
-          <%= r.input :description %>
-          <%= r.input :city %>
-          <div class="row">
+            <%= r.input :description %>
+            <%= r.input :city %>
             <div class="col">
               <%= r.input :age, class: 'mt-4' %>
             </div>
             <div class="col">
               <%= r.input :price %>
             </div>
-          </div>
           <%= r.input :photo, as: :file %>
-          <%= r.button :submit, class: 'new-button btn mt-3'%>
+          <%= r.button :submit, class: 'new-button'%>
         <% end %>
       </div>
     </div>

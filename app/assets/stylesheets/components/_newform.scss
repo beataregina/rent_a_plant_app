@@ -6,7 +6,11 @@
   height: 100vh;
 }
 
-
+.new-button{
+  margin-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: calc(var(--bs-gutter-x) * .5);
+  width: 96%;
+}
 
 .new-button:hover{
   background-color: #df889e;
@@ -35,5 +39,5 @@ p {
 
 
 .form-container{
-
+  width: 45vw;
 }
