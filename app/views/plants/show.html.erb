@@ -1,3 +1,14 @@
+<div><%= cl_image_tag(@plant.photo.key,
+      width: 400, height: 300, crop: :fill) %></div>
+<br>
+
+<h1><%= @plant.name %></h1>
+<p><%= @plant.plant_type %></p>
+<p><%= @plant.city %></p>
+<p><%= @plant.age %></p>
+<p><%= @plant.price %></p>
+<p><%= @plant.user_id %></p>
+
   <section class="section">
     <div class="l-container">
       <div class="plant">
