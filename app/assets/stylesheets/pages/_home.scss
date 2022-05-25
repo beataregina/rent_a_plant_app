@@ -1,7 +1,11 @@
 // Specific CSS for your home-page
 
 .btn{
+<<<<<<< HEAD
   background-color: #F2B7C6 ;
+=======
+  background-color: $pink-color ;
+>>>>>>> master
   color: white;
   border-color: $pink-hover;
 }
@@ -13,7 +17,11 @@
 }
 
 .btn:focus {
+<<<<<<< HEAD
   background-color: #F2B7C6;
+=======
+  background-color: $pink-color;
+>>>>>>> master
   color: white;
 }
 
@@ -21,7 +29,7 @@
 //   background-color: $mynewcolor ;
 // }
 .form-control:focus {
-  border-color: #$pink-color;
+  border-color: $pink-color;
   box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
 }
 
@@ -64,7 +72,7 @@
   width: 30%;
   height: auto;
   border-radius: 4px;
-  background: #$pink-color;
+  background: $pink-color;
   text-align: center;
   margin: 20px;
   padding: 20px;
