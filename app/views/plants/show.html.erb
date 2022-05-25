@@ -1,10 +1,14 @@
+<%= cl_image_tag(@plant.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+<br>
+
 <h1><%= @plant.name %></h1>
 <p><%= @plant.plant_type %></p>
 <p><%= @plant.city %></p>
 <p><%= @plant.age %></p>
 <p><%= @plant.price %></p>
 <p><%= @plant.user_id %></p>
-<p><%= @plant.photo_url %></p>
+
 
 <%= link_to '🪴', plants_path %>
 <%= link_to 'book', new_plant_booking_path(@plant) %>
