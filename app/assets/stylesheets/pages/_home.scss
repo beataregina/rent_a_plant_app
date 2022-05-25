@@ -2,16 +2,20 @@
 
 $mynewcolor: #F2B7C6;
 
-.btn-primary {
-    @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
-}
+// .btn-primary {
+//     @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
+// }
 
-.form-control {
-  @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
-}
+// .form-control {
+//   @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
+// }
 
-.btn-outline-primary {
-    @include button-outline-variant($mynewcolor, #222222, lighten($mynewcolor,5%), $mynewcolor);
+// .btn-outline-primary {
+//     @include button-outline-variant($mynewcolor, #222222, lighten($mynewcolor,5%), $mynewcolor);
+// }
+
+.btn {
+  background-color: $mynewcolor ;
 }
 
 .banner-home{
@@ -25,15 +29,16 @@ $mynewcolor: #F2B7C6;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 .home-search{
   width: 400px;
 }
 
-button {
-  background-color: white;
-}
+// button {
+//   background-color: white;
+// }
 
 
 .header-text {
@@ -45,6 +50,7 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  padding-top: 15px;
 }
 .single-box{
   position: relative;
@@ -92,7 +98,8 @@ button {
   line-height: 48px;
 }
 .img-text{
-  padding-top: 20px;
+  padding-top: 25px;
+  color: white;
 }
 .img-text p{
   font-size: 15px;
