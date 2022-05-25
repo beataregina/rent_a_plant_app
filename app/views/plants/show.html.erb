@@ -1,10 +1,47 @@
+<div><%= cl_image_tag(@plant.photo.key,
+      width: 400, height: 300, crop: :fill) %></div>
+<br>
+
 <h1><%= @plant.name %></h1>
 <p><%= @plant.plant_type %></p>
 <p><%= @plant.city %></p>
 <p><%= @plant.age %></p>
 <p><%= @plant.price %></p>
 <p><%= @plant.user_id %></p>
-<p><%= @plant.photo_url %></p>
 
-<%= link_to '🪴', plants_path %>
-<%= link_to 'book', new_plant_booking_path(@plant) %>
+  <section class="section">
+    <div class="l-container">
+      <div class="plant">
+        <div class="plant__half is--img">
+          <div class="plant__container is--img">
+          <img src="https://images.unsplash.com/photo-1573261289561-d584b9e07feb" loading="lazy" alt="" class="plant__img"></div>
+        </div>
+        <div class="plant__half">
+          <div class="plant__container">
+            <h1 class="plant__name-h1"><strong class="bold-text"><%= @plant.name %></strong></h1>
+            <div class="plant_price-div">
+              <h2 class="plant__price is--currency">€</h2>
+              <h2 class="plant__price"><%= @plant.price %></h2>
+            </div>
+            <div class="plant__details-wrp">
+              <div class="plant__details-div">
+                <div class="plant__detail-title">Plant type:</div>
+                <div class="plant__detail-description"><%= @plant.plant_type %></div>
+              </div>
+              <div class="plant__details-div">
+                <div class="plant__detail-title">Plant age:</div>
+                <div class="plant__detail-description"><%= @plant.age %></div>
+                <div class="plant__detail-description">years old</div>
+              </div>
+            </div>
+            <%= link_to 'Book this plant', new_plant_booking_path(@plant), class: 'plant__btn w-inline-block' %>
+            <div class="plant__description-div">
+              <div class="plant__description-text"><%= @plant.description %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= link_to '< Back to overview 🪴', plants_path, class: 'plants__btn-back-overview w-inline-block' %>
+
+    </div>
+  </section>
