@@ -3,11 +3,11 @@
 .btn{
   background-color: #F2B7C6 ;
   color: white;
-  border-color: #F2B7C6
+  border-color: $pink-hover;
 }
 
 .btn:hover{
-  background-color: #df889e;
+  background-color: $pink-hover;
   color: white;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
 }
@@ -21,7 +21,7 @@
 //   background-color: $mynewcolor ;
 // }
 .form-control:focus {
-  border-color: #F2B7C6;
+  border-color: #$pink-color;
   box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
 }
 
@@ -64,7 +64,7 @@
   width: 30%;
   height: auto;
   border-radius: 4px;
-  background: #F2B7C6;
+  background: #$pink-color;
   text-align: center;
   margin: 20px;
   padding: 20px;
