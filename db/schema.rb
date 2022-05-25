@@ -62,7 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_152950) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo_url"
     t.text "description"
     t.index ["user_id"], name: "index_plants_on_user_id"
   end
@@ -75,7 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_152950) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
