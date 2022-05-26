@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  font-weight: bold;
+  font-weight: 400;
   background-color: transparent;
   border-bottom: inset;
   max-height: 65px;
@@ -16,7 +16,31 @@
   flex-grow: 0;
 }
 
+.img-profile-wrp{
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+.img-profile {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}
 
+.img-profile-rounded{
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.35px solid black;
+}
+
+.img-profile-rounded:hover {
+  border: 2px solid black;
+}
 
 .navbar-lewagon .navbar-brand img {
   width: 90px;
@@ -24,45 +48,90 @@
 
 .navbar-nav {
   align-items: center;
-  gap: 32px;
+  gap: 2em;
 }
 
+.dropdown-toggle:hover {
+  color: $pink-color;
+}
 
 a {
   text-decoration: none;
 }
+.navigation-links{
+  transition: all 300ms ease;
+}
 
 .navigation-links:hover {
-  transform: scale(1.3);
+  // text-decoration: underline;
+  transform: scale(1.1);
   a:hover {
-    color: #F2B7C6;
+    color: $pink-color;
   }
 }
 
-.nav-item-dropdown {
-  width: 90px;
+.nav-item.dropdown { //don't touch, affect all
+  width: auto;
+  padding-right: 1em;
+  color: black;
+  display: flex;
+}
+
+.linki {
+  padding: 1.2em 1em;
+  transition: all 300ms ease;
+}
+
+.linki:hover {
+  background-color: #F1E4E7;
+}
+
+.dropdown-box {
+  padding: 0px !important;
 }
 
 .dropdown-menu {
-  background-color: #F2B7C6;
+  background-color: white;
   color: white;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: .9em;
+  font-weight: 400;
   text-align: center;
+  min-width: 12.5em;
   a:hover {
     color: black;
   }
 }
 
-.signup-login-btn {
-  background-color: #DF889E;
-  border-color: black;
+.button {
+  font-weight: 600;
+  padding: 1em 1.45em;//top & bottom then left & right
+  border-radius: 5px;
+}
+
+.login {
+  color: black;
+  background-color: white;
+  border: 1.5px solid $pink-color;
+  transition: all 300ms ease;
+}
+
+.login:hover {
   color: white;
-  font-weight: bold;
-  padding: 10px;
-  a:hover {
-    color: white;
-  }
+  background-color: $pink-hover;
+  border: 2px solid $pink-hover;
+  text-decoration: none !important;
+}
+
+.signup {
+  color: white;
+  background-color: $green-color;
+  border-color: black;
+}
+
+.signup:hover {
+  color: white;
+  background-color: #629375;
+  text-decoration: none !important;
 }
 
 .navbar-brand {
