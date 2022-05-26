@@ -187,6 +187,13 @@ a, a:hover, a:active, a:visited {
   font-weight: 600;
 }
 
+.form-2-fields{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
 
 @media screen and (max-width: 991px) {
   .l-container {
@@ -213,10 +220,6 @@ a, a:hover, a:active, a:visited {
   }
 
   .plant {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
 

@@ -6,15 +6,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  def show
-  end
+  # def show; end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.plant = @plant
     @booking.save!
-    redirect_to plant_booking_path(@plant, @booking)
+    # redirect_to plant_booking_path(@plant, @booking)
   end
 
   def destroy
@@ -35,5 +34,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
-
 end
