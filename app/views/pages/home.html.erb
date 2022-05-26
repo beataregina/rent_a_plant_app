@@ -6,10 +6,17 @@
                                                               url('https://images.unsplash.com/photo-1592212532206-a39d1bad53ea?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032')
                                                           ;
                                                           ">
-  <h1>Discover plants in your city!</h1>
-  <div class="home-search mt-3 input-group ">
-    <input type="search" class="form-control rounded" placeholder="Type your city..." aria-label="Search" aria-describedby="search-addon" />
-    <a href="/plants" class="btn btn-outline">Search...</a>
+  <h1 class="home-h1">Discover plants in your city!</h1>
+  <div class="home-search mt-3 input-group">
+
+    <%= form_tag plants_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control rounded",
+      placeholder: "Type your city..."
+    %>
+    <%= submit_tag "Search...", class: "btn btn-outline" %>
+    <% end %>
   </div>
 </div>
   <div class="box-area">

@@ -2,7 +2,11 @@ class PlantsController < ApplicationController
   before_action :find_plant, only: %i[show edit]
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      @plants = Plant.where('city ILIKE ?', "%#{params[:query]}%")
+    else
+      @plants = Plant.all
+    end
   end
 
   def show; end
@@ -27,6 +31,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :plant_type, :city, :age, :price, :photo_url)
+    params.require(:plant).permit(:name, :plant_type, :city, :age, :price, :photo)
   end
 end

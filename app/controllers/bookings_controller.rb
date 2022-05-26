@@ -1,9 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: :destroy
-  before_action :find_plant, only: %i[new create]
+  before_action :find_booking, only: %i[destroy show]
+  before_action :find_plant, only: %i[new create index show]
 
   def new
     @booking = Booking.new
+  end
+
+  def show
   end
 
   def create
@@ -11,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.plant = @plant
     @booking.save!
-    redirect_to plant_path(@plant)
+    redirect_to plant_booking_path(@plant, @booking)
   end
 
   def destroy
