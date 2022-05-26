@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   resources :plants do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create show]
   end
   resources :bookings, only: :destroy
+
 end

@@ -145,6 +145,7 @@ a, a:hover, a:active, a:visited {
   transition: all 250ms ease;
   font-size: 1.2em;
   font-weight: 600;
+  color: #fff;
 }
 
 .plant__btn:hover {
@@ -176,7 +177,7 @@ a, a:hover, a:active, a:visited {
 }
 
 .plants__btn-back-overview:hover {
-  color: #4f772d;
+  color: $pink-hover;
   font-weight: 600;
 }
 
