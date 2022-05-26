@@ -2,13 +2,13 @@
   <h1>Dashboard</h1>
 </div>
 
-<div class="container p-2">
+<div class="container d-flex p-2">
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link" href="#">Plants you've booked</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="#">Plants you've rented</a>
+      <a class="nav-link active" href="#">Plants you've rented out</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="#">Link</a>
@@ -16,18 +16,27 @@
   </ul>
 </div>
 
-<div class="bookings-container p-3 m-3">
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-</div>
+          <%# <h5 class="card-title"><%= booking.plant.name %></h5>
+          <%# <h5 class="card-title">Start date: <%= booking.start_date %></h5>
+          <%# <h5 class="card-title">End date: <%= booking.end_date %></h5>
+          <%# <p class="card-text">Description<%= booking.plant.description %></p>
+          <%# <%= link_to "Go to plant page >>", plant_path(booking.plant)%>
 
- <% @bookings.each do |booking| %>
-    <%= booking.start_date %>
 
-      <%end%>
+
+<div class="booking-area">
+  <% @bookings.each do |booking| %>
+      <div class="single-booking-box">
+        <div class="booking-img-area">
+          <%= cl_image_tag(booking.plant.photo.key, width: 200, height: 200, crop: :fill) %>
+        </div>
+        <div class="booking-img-text">
+          <span class="booking-name-text"><strong><%= booking.plant.name %></strong></span><br>
+          <span class="booking-detail-text">Start: <%= booking.start_date %></span><br>
+          <span class="booking-detail-text">End: <%= booking.end_date %></span><br>
+          <span class="booking-detail-text">Price: €<%= booking.plant.price %> per day</span><br>
+          <%= link_to "Go to plant page >>", plant_path(booking.plant)%>
+        </div>
+      </div>
+  <%end%>
+</div>
