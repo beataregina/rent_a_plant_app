@@ -14,7 +14,7 @@
 }
 
 .new-button:hover{
-  background-color: #df889e;
+  background-color: $pink-hover;
   color: white;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
 }
