@@ -7,7 +7,14 @@
         </div>
 
       <% elsif params[:query].present? && @plants.size == 0 %>
-        <h2 class="plants-index__h1">Sorry, there're no plants in <%= params[:query].capitalize %>  </h2>
+        <div class="plants-index__error-box">
+          <div class="plants-index__txt-wrp">
+            <h2 class="plants-index__h2">Sorry, there're no plants in <%= params[:query].capitalize %> </h2>
+            <h3 class="plants-index__h3">Check below out all our available plants around the globe</h3>
+          </div>
+          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_IwKi9V.json" background="transparent" class="lottie-plants-index" speed="1"  style="width: 25em; height:22em;" loop autoplay></lottie-player>
+        </div>
+        <hr style="margin-bottom: 9em;">
         <h1 class="plants-index__h1">Plants Catalogue</h1>
 
         <div class="plants-index">
