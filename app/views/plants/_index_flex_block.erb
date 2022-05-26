@@ -1,0 +1,14 @@
+<% @plants.each do |plant| %>
+    <%= link_to plant_path(plant), class: "plants-index__container w-inline-block" do %>
+      <div class="plants-index__img-wrp">
+        <%= cl_image_tag(plant.photo.key, class: "plants-index__img") %>
+      </div>
+      <div class="plants-index__details-wrp">
+        <h2 class="plants-index__name"><strong class="bold-text"><%= plant.name %></strong></h2>
+        <div class="plants-index__price-div">
+          <h3 class="plants-index__price is--currency">€</h3>
+          <h3 class="plants-index__price"><%= plant.price %></h3>
+        </div>
+      </div>
+    <% end %>
+<%end%>

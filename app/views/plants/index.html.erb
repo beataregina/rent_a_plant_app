@@ -1,20 +1,37 @@
 <section class="section">
     <div class="l-container is--plants-index">
-      <h1 class="plants-index__h1">Plants Catalogue</h1>
-      <div class="plants-index">
-       <% @plants.each do |plant| %>
-          <%= link_to plant_path(plant), class: "plants-index__container w-inline-block" do %>
-            <div class="plants-index__img-wrp">
-              <%= cl_image_tag(plant.photo.key, class: "plants-index__img") %>
-            </div>
-            <h2 class="plants-index__name"><strong class="bold-text"><%= plant.name %></strong></h2>
-            <div class="plants-index__price-div">
-              <h3 class="plants-index__price is--currency">€</h3>
-              <h3 class="plants-index__price"><%= plant.price %></h3>
-            </div>
-          <% end %>
+      <% if params[:query].present? && @plants.size > 0 %>
+        <h1 class="plants-index__h1">Plants Catalogue in <%= params[:query].capitalize %></h1>
+        <div class="plants-index">
+          <%= render "index_flex_block" %>
+        </div>
+
+      <% elsif params[:query].present? && @plants.size == 0 %>
+        <h2 class="plants-index__h1">Sorry, there're no plants in <%= params[:query].capitalize %>  </h2>
+        <h1 class="plants-index__h1">Plants Catalogue</h1>
+
+        <div class="plants-index">
+          <% Plant.all.each do |plant| %>
+            <%= link_to plant_path(plant), class: "plants-index__container w-inline-block" do %>
+              <div class="plants-index__img-wrp">
+                <%= cl_image_tag(plant.photo.key, class: "plants-index__img") %>
+              </div>
+              <div class="plants-index__details-wrp">
+                <h2 class="plants-index__name"><strong class="bold-text"><%= plant.name %></strong></h2>
+                <div class="plants-index__price-div">
+                  <h3 class="plants-index__price is--currency">€</h3>
+                  <h3 class="plants-index__price"><%= plant.price %></h3>
+                </div>
+              </div>
+            <% end %>
+          <%end%>
+
+        </div>
+      <% else %>
+        <h1 class="plants-index__h1">Plants Catalogue</h1>
+        <div class="plants-index">
+          <%= render "index_flex_block" %>
+        </div>
       <%end%>
-      </div>
-    </div>
   </section>
-<h3> <%= link_to "+ Create new plant!", new_plant_path %> </h3>
+<%#= link_to "+ Create new plant!", new_plant_path %>

@@ -118,11 +118,16 @@ a, a:hover, a:active, a:visited {
   position: relative;
   display: flex;
   margin-bottom: 1em;
-  font-size: 1.5em;
+  // font-size: 1.5em;
+  align-items: center;
 }
 
 .plant__detail-title {
   font-weight: 600;
+}
+
+.plant__icon-div{
+  height: 1.45em;
 }
 
 .plant__detail-title.is--family {
@@ -131,6 +136,7 @@ a, a:hover, a:active, a:visited {
 
 .plant__detail-description {
   margin-left: 10px;
+  font-size: 1.5em;
 }
 
 .plant__detail-description.is--family {
@@ -142,7 +148,7 @@ a, a:hover, a:active, a:visited {
   padding: 1em 1.6em;
   border-radius: 5px;
   background-color: $pink-color;
-  transition: all 250ms ease;
+  transition: background-color 250ms ease;
   font-size: 1.2em;
   font-weight: 600;
   color: #fff;
