@@ -1,9 +1,10 @@
 footer{
-  background: black;
+  background: #7D7E75;
   height: auto;
   width: 100vw;
   padding-top: 40px;
   color: white;
+  opacity: 0.3;
 }
 .footer-content{
   display: flex;
@@ -14,7 +15,7 @@ footer{
 }
 .footer-content h3{
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: capitalize;
   line-height: 3rem;
 }
@@ -46,7 +47,7 @@ footer{
   color: $pink-hover;
 }
 .footer-bottom{
-  background: black;
+  background: #7D7E75;
   width: 100vw;
   padding: 20px 0;
   text-align: center;
