@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  font-weight: bold;
   background-color: transparent;
   border-bottom: inset;
   max-height: 65px;
@@ -43,8 +44,27 @@ a {
 }
 
 .dropdown-menu {
-background-color: #F2B7C6;
+  background-color: #F2B7C6;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
   a:hover {
     color: black;
   }
+}
+
+.signup-login-btn {
+  background-color: #DF889E;
+  border-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  a:hover {
+    color: white;
+  }
+}
+
+.navbar-brand {
+ border-radius: 50%;
 }
