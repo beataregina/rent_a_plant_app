@@ -15,28 +15,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
 
-          <% if user_signed_in?%>
-          <li class="nav-item">
-            <%= link_to "Sign in", new_user_session_path %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign up",  new_user_registration_path %>
-          </li>
+          <%if user_signed_in?%>
+            <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path %>
+            </li>
+            <li class="nav-item">
+            <%= link_to "Add a plant", new_plant_path %>
+            </li>
           <%else%>
-          <li class="nav-item">
-            <%= link_to "Sign out", destroy_user_session_path %>
-          </li>
+            <li class="nav-item">
+            <%= link_to "Login", new_user_session_path %>
+            </li>
+            <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path %>
+            </li>
           <%end%>
 
           <li class="nav-item">
             <%= link_to "Home", root_path %>
           </li>
           <li class="nav-item">
-          <%= link_to "Add a plant", new_plant_path %>
-          </li>
-          <li class="nav-item">
             <%= link_to "See all plants", plants_path %>
           </li>
+
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.dribbble.com/users/2795981/screenshots/8672749/media/d17286e628ff2b6791fa9d520b17cb90.jpg" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
