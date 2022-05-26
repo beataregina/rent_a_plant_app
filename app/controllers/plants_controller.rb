@@ -3,13 +3,15 @@ class PlantsController < ApplicationController
 
   def index
     if params[:query].present?
-      @plants = Plant.where('city ILIKE ?', "%#{params[:query]}%")
+        @plants = Plant.where('city ILIKE ?', "%#{params[:query]}%")
     else
       @plants = Plant.all
     end
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def new
     @plant = Plant.new
