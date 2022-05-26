@@ -31,7 +31,7 @@ a {
   text-decoration: none;
 }
 
-.nav-item:hover {
+.navigation-links:hover {
   transform: scale(1.3);
   a:hover {
     color: #F2B7C6;
@@ -40,4 +40,11 @@ a {
 
 .nav-item-dropdown {
   width: 90px;
+}
+
+.dropdown-menu {
+background-color: #F2B7C6;
+  a:hover {
+    color: black;
+  }
 }
