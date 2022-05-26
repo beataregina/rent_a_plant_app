@@ -1,4 +1,31 @@
-<h1>YAAAY</h1>
+<div class="container p-2">
+  <h1>Dashboard</h1>
+</div>
+
+<div class="container p-2">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Plants you've booked</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Plants you've rented</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Link</a>
+    </li>
+  </ul>
+</div>
+
+<div class="bookings-container p-3 m-3">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
 
  <% @bookings.each do |booking| %>
     <%= booking.start_date %>
