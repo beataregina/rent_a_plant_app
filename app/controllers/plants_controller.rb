@@ -2,7 +2,11 @@ class PlantsController < ApplicationController
   before_action :find_plant, only: %i[show edit]
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      @plants = Plant.where('city ILIKE ?', "%#{params[:query]}%")
+    else
+      @plants = Plant.all
+    end
   end
 
   def show; end
