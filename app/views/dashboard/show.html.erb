@@ -24,7 +24,8 @@
           <span class="booking-detail-text">Start: <%= booking.start_date %></span><br>
           <span class="booking-detail-text">End: <%= booking.end_date %></span><br>
           <span class="booking-detail-text">Price: €<%= booking.plant.price %> per day</span><br>
-          <%= link_to "Go to plant page >>", plant_path(booking.plant)%>
+          <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this plant from your bookings?"}, class: 'text-danger' %>
+          <%#= link_to "Go to plant page >>", plant_path(booking.plant)%>
         </div>
       </div>
   <%end%>
