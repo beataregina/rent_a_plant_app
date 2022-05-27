@@ -4,7 +4,7 @@
 
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <%= image_tag 'full-logo-transparent.png'
        %></a>
 
@@ -15,33 +15,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
 
+        <%# <li class="nav-item navigation-links"> %>
+        <%#= link_to "Home", root_path %>
+        <%# </li> %>
         <li class="nav-item navigation-links">
-        <%= link_to "Home", root_path %>
-        </li>
-        <li class="nav-item navigation-links">
-        <%= link_to "See all plants", plants_path %>
+        <%= link_to "Plants Catalogue", plants_path %>
         </li>
 
-        <%if user_signed_in?%>
+        <%if user_signed_in? %>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.dribbble.com/users/2795981/screenshots/8672749/media/d17286e628ff2b6791fa9d520b17cb90.jpg" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Dashboard", dashboard_path, class: "nav-item dropdown" %>
-              <br></br>
-              <%= link_to "Add your own plant", new_plant_path, class: "nav-item dropdown"%>
-              <br></br>
-              <%= link_to "Logout", destroy_user_session_path, class: "nav-item dropdown" %>
+          <a class="dropdown-toggle" href="" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag "img-avatar-sergio.jpeg", class: "img-profile-rounded" %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-box" style="top: 48px;" aria-labelledby="navbarDropdown">
+            <%= link_to "Dashboard", dashboard_path, class: "nav-item dropdown linki" %>
+            <%= link_to "Add your own plant", new_plant_path, class: "nav-item dropdown linki"%>
+            <%= link_to "Logout", destroy_user_session_path, class: "nav-item dropdown linki" %>
+          </div>
         <%else%>
-          <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: 'signup-login-btn' %>
-          </li>
-
-          <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: 'signup-login-btn' %>
-          </li>
+          <%= link_to "Login", new_user_session_path, class: 'nav-item button login' %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'nav-item button signup' %>
         <%end%>
 
-            </div>
           </li>
           <!--li class="nav-item"-->
           <!--/li-->
