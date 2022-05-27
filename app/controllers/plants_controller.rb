@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-  before_action :find_plant, only: %i[show edit]
+  before_action :find_plant, only: %i[show edit destroy update]
 
   def index
     if params[:query].present?
@@ -24,7 +24,18 @@ class PlantsController < ApplicationController
     redirect_to plant_path(@plant)
   end
 
-  def edit; end
+  def edit
+  end
+
+  def update
+    @plant.update(plant_params)
+    redirect_to plant_path(@plant)
+  end
+
+  def destroy
+    @plant.destroy
+    redirect_to plant_path, status: :see_other
+  end
 
   private
 
