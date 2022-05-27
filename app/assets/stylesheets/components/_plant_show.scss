@@ -145,7 +145,7 @@ a, a:hover, a:active, a:visited {
 
 .plant__btn {
   margin-bottom: 2.74em;
-  padding: 1em 1.6em;
+  padding: .75em 1.6em;
   border-radius: 5px;
   background-color: $pink-color;
   transition: background-color 250ms ease;
@@ -189,9 +189,17 @@ a, a:hover, a:active, a:visited {
 
 .form-2-fields{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
   width: 100%;
+}
+
+#booking_start_date {
+  margin-left: 0em !important;
+}
+
+.new_booking {
+  min-width: 100%;
 }
 
 
