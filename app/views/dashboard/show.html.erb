@@ -1,23 +1,31 @@
 <div class="container p-2">
-  <h1>Dashboard</h1>
+  <h1 class="dash-header">Dashboard</h1>
 </div>
 
- <% @bookings.each do |booking| %>
-    <%= booking.start_date %>
-      <%end%>
+<div class="container d-flex p-2">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Plants you've booked</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Previous bookings</a>
+    </li>
+  </ul>
+</div>
 
-<br></br>
-
-<button class="edit-delete-button" type="button">
-  blablabla
-
-<button class="edit-delete-button" type="button">
-  blablabla
-
-<br></br>
-
-<button class="edit-delete-button" type="button">
-  blablabla
-
-<button class="edit-delete-button" type="button">
-  blablabla
+<div class="booking-area">
+  <% @bookings.each do |booking| %>
+      <div class="single-booking-box">
+        <div class="booking-img-area">
+          <%= cl_image_tag(booking.plant.photo.key, style: 'width: 100%; object-fit: cover;', height: 200, crop: :fill) %>
+        </div>
+        <div class="booking-img-text">
+          <span class="booking-name-text"><strong><%= booking.plant.name %></strong></span><br>
+          <span class="booking-detail-text">Start: <%= booking.start_date %></span><br>
+          <span class="booking-detail-text">End: <%= booking.end_date %></span><br>
+          <span class="booking-detail-text">Price: €<%= booking.plant.price %> per day</span><br>
+          <%= link_to "Go to plant page >>", plant_path(booking.plant)%>
+        </div>
+      </div>
+  <%end%>
+</div>
