@@ -1,34 +1,23 @@
 <div class="container p-2">
-  <h1>Dashboard</h1>
+  <h1 class="dash-header">Dashboard</h1>
 </div>
 
 <div class="container d-flex p-2">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link" href="#">Plants you've booked</a>
+      <a class="nav-link active" href="#">Plants you've booked</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="#">Plants you've rented out</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Link</a>
+      <a class="nav-link active" href="#">Previous bookings</a>
     </li>
   </ul>
 </div>
-
-          <%# <h5 class="card-title"><%= booking.plant.name %></h5>
-          <%# <h5 class="card-title">Start date: <%= booking.start_date %></h5>
-          <%# <h5 class="card-title">End date: <%= booking.end_date %></h5>
-          <%# <p class="card-text">Description<%= booking.plant.description %></p>
-          <%# <%= link_to "Go to plant page >>", plant_path(booking.plant)%>
-
-
 
 <div class="booking-area">
   <% @bookings.each do |booking| %>
       <div class="single-booking-box">
         <div class="booking-img-area">
-          <%= cl_image_tag(booking.plant.photo.key, width: 200, height: 200, crop: :fill) %>
+          <%= cl_image_tag(booking.plant.photo.key, style: 'width: 100%; object-fit: cover;', height: 200, crop: :fill) %>
         </div>
         <div class="booking-img-text">
           <span class="booking-name-text"><strong><%= booking.plant.name %></strong></span><br>
