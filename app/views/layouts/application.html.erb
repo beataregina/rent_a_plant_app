@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>RentAPlantApp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -16,8 +16,7 @@
   <%= render "shared/navbar" %>
 
 
-   <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+   <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
