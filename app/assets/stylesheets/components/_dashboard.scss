@@ -2,7 +2,6 @@
 .booking-area{
   display: flex;
   flex-wrap: wrap;
-  // padding-top: 2.5em;
   padding-bottom: 2.5em;
   margin-left: 5em;
 }
@@ -10,11 +9,11 @@
 .single-booking-box{
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: initial;
   width: 20%;
-  min-width: 280px;
+  min-width: 320px;
   height: auto;
   border-radius: 4px;
   background: white;
@@ -25,7 +24,6 @@
 }
 
 .single-booking-box:hover {
-  background-color: #9ABCA7;
   color: white;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
 }
@@ -34,23 +32,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 12z;
   height: 200px;
-  // border: 6px solid #ddd;
-  // border-radius: 50%;
   margin-bottom: 10px;
   padding: 20px;
   -webkit-background-size: cover;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
 }
 
 .booking-img-text .header-text{
-  padding-top: 25px;
+  padding: 25px;
   color: black;
 }
 
 .booking-img-text{
   font-size: 0.8rem;
   line-height: 1.4rem;
+  color: black;
+}
+
+.btn:hover{
+  background-color: $pink-hover;
+  color: white;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(244, 109, 205, 0.6);
+}
+
+.btn:focus {
+  background-color: $pink-color;
+  color: white;
 }
