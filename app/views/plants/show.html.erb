@@ -39,10 +39,9 @@
           </div>
           <%= simple_form_for ([@plant, @booking]) do |r| %>
           <div class="form-2-fields">
-
-          </div>
-            <%= r.input :start_date, as: :date, html5: true %>
+            <%= r.input :start_date, as: :date, html5: true, class: "input-left" %>
             <%= r.input :end_date, as: :date, html5: true %>
+          </div>
             <%= r.button :submit, class: "plant__btn w-inline-block", data: { action: 'click->modal#book', "bs-target": "#booking_modal", "bs-toggle": "modal" } %>
           <% end %>
           <%# <a type="button" class="plant__btn w-inline-block" data-bs-toggle="modal" data-bs-target="#booking_modal">Book this plant</a> %>
