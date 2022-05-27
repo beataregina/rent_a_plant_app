@@ -76,6 +76,37 @@
   margin-right: 5px;
 }
 
+.plants-index__error-box {
+  padding: 0em 3em;
+  margin-bottom: 3.5em;
+  // background-color: #ffffcc9c;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  // flex-direction: column;
+  width: auto;
+}
+
+.lottie-plants-index {
+  position: absolute;
+  left: 65%;
+  top: -9.5em;
+}
+
+.plants-index__h2 {
+  font-size: 2.13em;
+  padding-bottom: .27em;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0px !important;
+}
+
+.plants-index__h3 {
+  font-size: 1.74em;
+}
+
 @media screen and (max-width: 991px) {
   .plants-index__h1 {
     margin-bottom: 1em;
