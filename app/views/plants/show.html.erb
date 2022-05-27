@@ -37,13 +37,15 @@
               <div class="plant__detail-description">years old</div>
             </div>
           </div>
-          <%= simple_form_for ([@plant, @booking]) do |r| %>
-          <div class="form-2-fields">
-            <%= r.input :start_date, as: :date, html5: true, class: "input-left" %>
-            <%= r.input :end_date, as: :date, html5: true %>
+          <div data-controller="redirect" class="form-container">
+            <%= simple_form_for ([@plant, @booking]) do |r| %>
+            <div class="form-2-fields">
+              <%= r.input :start_date, as: :date, html5: true, class: "input-left" %>
+              <%= r.input :end_date, as: :date, html5: true %>
+            </div>
+              <%= r.button :submit, class: "plant__btn w-inline-block", data: { action: 'click->redirect#redirect', "bs-target": "#booking_modal", "bs-toggle": "modal" } %>
+            <% end %>
           </div>
-            <%= r.button :submit, class: "plant__btn w-inline-block", data: { action: 'click->modal#book', "bs-target": "#booking_modal", "bs-toggle": "modal" } %>
-          <% end %>
           <%# <a type="button" class="plant__btn w-inline-block" data-bs-toggle="modal" data-bs-target="#booking_modal">Book this plant</a> %>
           <%#= link_to 'Book this plant', new_plant_booking_path(@plant), class: 'plant__btn w-inline-block' %>
           <div class="plant__description-div">

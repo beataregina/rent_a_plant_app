@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import NavbarController from "./navbar_controller.js"
 application.register("navbar", NavbarController)
+
+import RedirectController from "./redirect_controller.js"
+application.register("redirect", RedirectController)
