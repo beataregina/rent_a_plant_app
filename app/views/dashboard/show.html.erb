@@ -1,65 +1,68 @@
 
-<div class="container p-2">
-  <h1 class="dash-header">Dashboard</h1>
-</div>
+<div class="dashboard-body">
+  <div class="container p-2">
+    <h1 class="dash-header">Dashboard</h1>
+  </div>
 
-<div class="container d-flex p-2">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Plants you've booked</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Previous bookings</a>
-    </li>
-  </ul>
-</div>
+  <div class="container d-flex p-2">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Plants you've booked</a>
+      </li>
+      <%# <li class="nav-item">
+        <a class="nav-link active" href="#">Previous bookings</a>
+      </li> %>
+    </ul>
+  </div>
 
-<div class="booking-area">
-  <% @bookings.each do |booking| %>
-      <div class="single-booking-box">
-        <div class="booking-img-area">
-          <%= cl_image_tag(booking.plant.photo.key, style: 'width: 100%; object-fit: cover;', height: 180, crop: :fill) %>
-        </div>
-        <div class="booking-img-text">
-          <span class="booking-name-text"><span><strong><%= booking.plant.name %></strong></span><br>
-          <span class="booking-detail-text">Start: <%= booking.start_date.day %>.<%= booking.start_date.month %>.<%= booking.start_date.year %></span><br>
-          <span class="booking-detail-text">End: <%= booking.end_date.day %>.<%= booking.end_date.month %>.<%= booking.end_date.year %></span><br>
-          <span class="booking-detail-text">Price: €<%= booking.plant.price %>/day</span><br>
-          <div class="dash-buttons">
-            <button type="button" class="btn btn-primary btn-sm m-1"><%= link_to "See page", plant_path(booking.plant)%></button>
-            <%= link_to "delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this plant from your bookings?"}, class: 'btn btn-outline-primary btn-sm m-1' %>
+  <div class="booking-area">
+    <% @bookings.each do |booking| %>
+        <div class="single-booking-box">
+          <div class="booking-img-area">
+            <%= cl_image_tag(booking.plant.photo.key, style: 'width: 100%; object-fit: cover;', height: 180, crop: :fill) %>
+          </div>
+          <div class="booking-img-text">
+            <span class="booking-name-text"><span><strong><%= booking.plant.name %></strong></span><br>
+            <span class="booking-detail-text">Start: <%= booking.start_date.day %>.<%= booking.start_date.month %>.<%= booking.start_date.year %></span><br>
+            <span class="booking-detail-text">End: <%= booking.end_date.day %>.<%= booking.end_date.month %>.<%= booking.end_date.year %></span><br>
+            <span class="booking-detail-text">Price: €<%= booking.plant.price %>/day</span><br>
+            <div class="dash-buttons btns-wrp">
+              <%= link_to 'See plant', plant_path(booking.plant), class: 'btn btn-primary btn-sm btn-custom btn-plants' %>
+              <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this plant from your bookings?"}, class: 'btn btn-outline-primary btn-sm btn-custom btn-delete' %>
+            </div>
           </div>
         </div>
-      </div>
-  <%end%>
-</div>
+    <%end%>
+  </div>
 
-<div class="container d-flex p-2">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Plants you're current listing</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Previous bookings</a>
-    </li>
-  </ul>
-</div>
+  <div class="container d-flex p-2">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Plants you're current listing</a>
+      </li>
+      <%# <li class="nav-item">
+        <a class="nav-link active" href="#">Previous bookings</a>
+      </li> %>
+    </ul>
+  </div>
 
-<div class="booking-area">
-  <% @plants.each do |plant| %>
-      <div class="single-booking-box">
-        <div class="booking-img-area">
-          <%= cl_image_tag(plant.photo.key, style: 'width: 100%; object-fit: cover;', height: 180, crop: :fill) %>
-        </div>
-        <div class="booking-img-text">
-          <span class="booking-name-text"><strong><%= plant.name %></strong></span><br>
-          <span class="booking-detail-text">Age:<%= plant.age %>
-          <span class="booking-detail-text">Price: €<%= plant.price %>/day</span><br>
-          <div class="dash-buttons">
-            <button type="button" class="btn btn-primary btn-sm m-1"><%= link_to "See page", plant_path(plant)%></button>
-            <%= link_to "delete", plant_path(plant), class:"btn btn-outline-primary btn-sm m-1 text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this plant from your bookings?"} %>
+  <div class="booking-area">
+    <% @plants.each do |plant| %>
+        <div class="single-booking-box">
+          <div class="booking-img-area">
+            <%= cl_image_tag(plant.photo.key, style: 'width: 100%; object-fit: cover;', height: 180, crop: :fill) %>
+          </div>
+          <div class="booking-img-text">
+            <span class="booking-name-text"><strong><%= plant.name %></strong></span><br>
+            <span class="booking-detail-text">Type: <%= plant.plant_type %></span><br>
+            <span class="booking-detail-text">Age: <%= plant.age %> years old</span><br>
+            <span class="booking-detail-text">Price: €<%= plant.price %>/day</span><br>
+            <div class="dash-buttons btns-wrp">
+              <%= link_to 'See plant', plant_path(plant), class: 'btn btn-primary btn-sm btn-custom btn-plants' %>
+              <%= link_to "Delete", plant_path(plant), class:"btn btn-outline-primary btn-sm btn-custom btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this plant from your bookings?"} %>
+            </div>
           </div>
         </div>
-      </div>
-  <%end%>
+    <%end%>
+  </div>
 </div>
